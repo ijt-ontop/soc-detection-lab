@@ -1,0 +1,73 @@
+# Day 3 - Wazuh SIEM Setup and Endpoint Integration
+
+## What I did
+
+On Day 3, I created an Ubuntu Server virtual machine to act as the monitoring server for the lab.
+
+I installed Wazuh on the server and connected the Windows endpoint from Day 1 as an agent. This allows security events from the Windows machine to be collected and viewed through the Wazuh dashboard.
+
+The Wazuh server was configured with:
+
+- Ubuntu Server 24.04.4 LTS
+- 8 GB RAM
+- 4 virtual processors
+- 60 GB virtual storage
+- Wazuh 4.14.7
+
+## Network Configuration
+
+The Wazuh server uses two virtual network adapters.
+
+The first adapter uses NAT to provide internet access for updates and downloading packages.
+
+The second adapter is connected to the internal VirtualBox network `SOC-LAB`.
+
+I configured the internal interface with the static IP address:
+
+`192.168.50.30/24`
+
+This allows the Wazuh server to communicate with the other machines in the lab while keeping the lab traffic on the internal network.
+
+## Wazuh Installation
+
+I installed the Wazuh server, indexer and dashboard on the Ubuntu Server VM.
+
+After installation, I checked that the main Wazuh services were running:
+
+- wazuh-manager
+- wazuh-indexer
+- wazuh-dashboard
+
+I then accessed the Wazuh dashboard from the Windows endpoint using the server's internal IP address.
+
+## Storage Troubleshooting
+
+During the setup I noticed an error from the Wazuh indexer stating that there was no space left on the device.
+
+The virtual disk was 60 GB, but the Ubuntu root logical volume was only using around 29 GB. The remaining space was available in the LVM volume group but had not been allocated to the root filesystem.
+
+I checked the available storage using `df`, `vgs` and `lvs`, then extended the root logical volume to use the remaining space.
+
+After extending it, the root filesystem increased to approximately 57 GB and the Wazuh indexer operated normally.
+
+## Windows Endpoint Integration
+
+I installed the Wazuh agent on `SOC-ENDPOINT-01` and configured it to communicate with the Wazuh server at `192.168.50.30`.
+
+The endpoint uses the internal IP address:
+
+`192.168.50.10`
+
+After starting the Wazuh agent service, I confirmed that `SOC-ENDPOINT-01` appeared as an active endpoint in the Wazuh dashboard.
+
+## Log Collection Test
+
+To check that events from the Windows endpoint were reaching Wazuh, I generated a test Windows event and used Threat Hunting to check events associated with the endpoint.
+
+Wazuh successfully received events from `SOC-ENDPOINT-01`, confirming that the endpoint and monitoring server were communicating correctly.
+
+## Evidence
+
+Screenshots from the setup and testing are available in:
+
+[screenshots/day-03/](../screenshots/day-03/)
