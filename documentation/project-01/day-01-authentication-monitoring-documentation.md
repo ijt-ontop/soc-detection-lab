@@ -18,7 +18,7 @@ I generated several failed logon attempts against the `socanalyst` account.
 
 Windows recorded the failed attempts in the Security log as Event ID `4625`.
 
-![Failed logon events in Windows Event Viewer](../screenshots/project-01/day-01/Event-Viewer-Failed-Logons-4625.png)
+![Failed logon events in Windows Event Viewer](../../screenshots/project-01/day-01/Event-Viewer-Failed-Logons-4625.png)
 
 I then searched for the authentication failures in Wazuh Threat Hunting.
 
