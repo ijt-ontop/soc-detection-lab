@@ -28,7 +28,7 @@ The repeated failures appeared against `SOC-ENDPOINT-01` with:
 - Rule Level: `5`
 - Description: `Logon Failure - Unknown user or bad password`
 
-![Repeated failed logons detected in Wazuh](../screenshots/project-01/day-01/Wazuh-Repeated-Failed-Logons.png)
+![Repeated failed logons detected in Wazuh](../../screenshots/project-01/day-01/Wazuh-Repeated-Failed-Logons.png)
 
 This confirmed that the Windows authentication failures were being collected by Wazuh and could be investigated from the SIEM.
 
@@ -40,7 +40,7 @@ After several failed authentication attempts, the `socanalyst` account became lo
 
 Windows recorded this as Event ID `4740` - `A user account was locked out`.
 
-![Windows account lockout event](../screenshots/project-01/day-01/Event-4740-Account-Lockout.png)
+![Windows account lockout event](../../screenshots/project-01/day-01/Event-4740-Account-Lockout.png)
 
 I searched for the same activity in Wazuh and found an account lockout alert.
 
@@ -50,7 +50,7 @@ Wazuh classified the event as:
 - Rule Level: `9`
 - Description: `User account locked out (multiple login errors)`
 
-![Account lockout detected in Wazuh](../screenshots/project-01/day-01/Wazuh-4740-Account-Lockout.png)
+![Account lockout detected in Wazuh](../../screenshots/project-01/day-01/Wazuh-4740-Account-Lockout.png)
 
 The increase from Level 5 failed-logon alerts to a Level 9 account-lockout alert made the lockout stand out as the more significant event during the investigation.
 
@@ -67,7 +67,7 @@ Wazuh recorded the successful authentication as:
 - Rule Level: `3`
 - Description: `Windows Workstation Logon Success`
 
-![Successful Windows logon detected in Wazuh](../screenshots/project-01/day-01/Wazuh-4624-Successful-Logon.png)
+![Successful Windows logon detected in Wazuh](../../screenshots/project-01/day-01/Wazuh-4624-Successful-Logon.png)
 
 ---
 
