@@ -22,7 +22,7 @@ The file is located at:
 
 This is where I added my own custom detection rule.
 
-![Local Rules Before Custom Rule](../../screenshots/day-03/Wazuh-Local-Rules-Before-Custom-Rule.png)
+![Local Rules Before Custom Rule](../../screenshots/project-01/day-03/Wazuh-Local-Rules-Before-Custom-Rule.png)
 
 ---
 
@@ -59,7 +59,7 @@ The main parts of the rule are:
 - `level="10"` - creates a higher-level alert when the rule triggers
 - `T1110` - maps the alert to MITRE ATT&CK Brute Force
 
-![Custom Rule Configuration](../../screenshots/day-03/Wazuh-Custom-Rule-100100-Configuration.png)
+![Custom Rule Configuration](../../screenshots/project-01/day-03/Wazuh-Custom-Rule-100100-Configuration.png)
 
 ---
 
@@ -77,7 +77,7 @@ Wazuh showed the failed logon events being generated.
 
 Five of the attempts happened within roughly 11 seconds, so they were well within the 60-second window configured in the custom rule.
 
-![Failed Logon Threshold](../../screenshots/day-03/Wazuh-60122-Failed-Logon-Threshold.png)
+![Failed Logon Threshold](../../screenshots/project-01/day-03/Wazuh-60122-Failed-Logon-Threshold.png)
 
 ---
 
@@ -91,7 +91,7 @@ rule.id: 100100
 
 The rule successfully triggered.
 
-![Custom Brute Force Detection](../../screenshots/day-03/Wazuh-Custom-Brute-Force-Detection-100100.png)
+![Custom Brute Force Detection](../../screenshots/project-01/day-03/Wazuh-Custom-Brute-Force-Detection-100100.png)
 
 The alert showed:
 
@@ -109,7 +109,7 @@ This confirmed that Wazuh had taken the separate failed logon events and correla
 
 I opened the alert to check the information Wazuh had recorded.
 
-![Custom Brute Force Alert Details](../../screenshots/day-03/Wazuh-Custom-Brute-Force-Alert-Details.png)
+![Custom Brute Force Alert Details](../../screenshots/project-01/day-03/Wazuh-Custom-Brute-Force-Alert-Details.png)
 
 The alert details showed:
 
