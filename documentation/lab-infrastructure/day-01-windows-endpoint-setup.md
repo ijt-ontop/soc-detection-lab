@@ -33,4 +33,4 @@ Keeping this traffic on an internal network provides a controlled environment fo
 
 Screenshots of the VM and network configuration are available in:
 
-`screenshots/day-01/`
+`screenshots/lab-infrastructure/windows-endpoint/`
