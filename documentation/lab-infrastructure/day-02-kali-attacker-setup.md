@@ -80,4 +80,4 @@ I also gained experience troubleshooting the connection between Kali and Windows
 
 Screenshots from this stage are available here:
 
-[screenshots/day-02/](../screenshots/day-02/)
+[View Kali Attacker Screenshots](../../screenshots/lab-infrastructure/kali-attacker/)
