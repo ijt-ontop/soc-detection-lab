@@ -70,4 +70,4 @@ Wazuh successfully received events from `SOC-ENDPOINT-01`, confirming that the e
 
 Screenshots from the setup and testing are available in:
 
-[screenshots/day-03/](../screenshots/day-03/)
+[View Wazuh SIEM Screenshots](../../screenshots/lab-infrastructure/wazuh-siem/)
