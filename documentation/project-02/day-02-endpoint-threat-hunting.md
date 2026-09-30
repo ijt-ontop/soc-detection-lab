@@ -28,7 +28,7 @@ data.win.system.eventID : "4688"
 
 This returned approximately 1,595 process creation events within the selected 24-hour period.
 
-![Process Hunt Baseline](../screenshots/project-02/day-02/Process-Hunt-Baseline-4688.png)
+![Process Hunt Baseline](../../screenshots/project-02/day-02/Process-Hunt-Baseline-4688.png)
 
 This demonstrated an important challenge when threat hunting: process creation telemetry can generate a large amount of data.
 
@@ -51,7 +51,7 @@ The event contained fields including:
 
 The captured event showed `powershell.exe` being created with `explorer.exe` as its parent process.
 
-![PowerShell Process Hunt](../screenshots/project-02/day-02/PowerShell-Process-Hunt-4688.png)
+![PowerShell Process Hunt](../../screenshots/project-02/day-02/PowerShell-Process-Hunt-4688.png)
 
 Process names alone provide limited context. Parent process information helps determine how an application was launched and can be useful when reconstructing process relationships during an investigation.
 
@@ -61,7 +61,7 @@ Process names alone provide limited context. Parent process information helps de
 
 I then examined the command-line information associated with PowerShell process creation.
 
-![PowerShell Command Line Hunt](../screenshots/project-02/day-02/PowerShell-CommandLine-Hunt.png)
+![PowerShell Command Line Hunt](../../screenshots/project-02/day-02/PowerShell-CommandLine-Hunt.png)
 
 The `commandLine` field recorded both the PowerShell executable and the arguments supplied to it.
 
@@ -89,7 +89,7 @@ data.win.system.eventID : "4104"
 
 The events contained the `scriptBlockText` field, allowing PowerShell content to be examined directly.
 
-![PowerShell Script Block Hunt](../screenshots/project-02/day-02/PowerShell-ScriptBlock-Hunt-4104.png)
+![PowerShell Script Block Hunt](../../screenshots/project-02/day-02/PowerShell-ScriptBlock-Hunt-4104.png)
 
 One captured event contained PowerShell activity involving `secedit`, including exporting security policy information and searching the resulting configuration.
 
@@ -101,7 +101,7 @@ This demonstrated the additional visibility provided by PowerShell Script Block 
 
 I also investigated Command Prompt execution through Event ID 4688.
 
-![CMD Process Hunt](../screenshots/project-02/day-02/CMD-Process-Hunt-4688.png)
+![CMD Process Hunt](../../screenshots/project-02/day-02/CMD-Process-Hunt-4688.png)
 
 The event showed:
 
@@ -121,7 +121,7 @@ This allowed the process execution to be examined in context rather than treatin
 
 I generated discovery activity using `whoami` from Command Prompt and then located the corresponding process creation event.
 
-![Whoami Process Chain Hunt](../screenshots/project-02/day-02/Whoami-Process-Chain-Hunt.png)
+![Whoami Process Chain Hunt](../../screenshots/project-02/day-02/Whoami-Process-Chain-Hunt.png)
 
 The telemetry showed:
 
@@ -166,7 +166,7 @@ data.win.system.eventID : "4688" AND
 
 This reduced the dataset to two matching events.
 
-![Discovery Process Hunt Noise Reduction](../screenshots/project-02/day-02/Discovery-Process-Hunt-Noise-Reduction.png)
+![Discovery Process Hunt Noise Reduction](../../screenshots/project-02/day-02/Discovery-Process-Hunt-Noise-Reduction.png)
 
 The progression was:
 
