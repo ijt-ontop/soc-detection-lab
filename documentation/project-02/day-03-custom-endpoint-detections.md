@@ -56,7 +56,7 @@ The event showed:
 
 The activity matched Rule `100200` and generated a level 5 Wazuh alert.
 
-![Rule 100200 alert](../../screenshots/day-03/custom-rule-100200-alert.png)
+![Rule 100200 alert](../../screenshots/project-02/day-03/custom-rule-100200-alert.png)
 
 ---
 
