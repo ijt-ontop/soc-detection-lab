@@ -23,7 +23,7 @@ Rule `100201` detects `ipconfig.exe` when it is launched from `cmd.exe`.
 
 Both rules use Wazuh process creation rule `67027` and then check the process and parent process fields.
 
-![Custom detection rules](../../screenshots/day-03/custom-detection-rules-configuration.png)
+![Custom detection rules](../../screenshots/project-02/day-03/custom-detection-rules-configuration.png)
 
 Before restarting Wazuh, I checked the rules for configuration errors using:
 
@@ -52,7 +52,7 @@ The event showed:
 - Parent process: `C:\Windows\System32\cmd.exe`
 - Event ID: `4688`
 
-![Whoami process telemetry](../../screenshots/day-03/whoami-4688-process-telemetry.png)
+![Whoami process telemetry](../../screenshots/project-02/day-03/whoami-4688-process-telemetry.png)
 
 The activity matched Rule `100200` and generated a level 5 Wazuh alert.
 
@@ -76,7 +76,7 @@ instead of:
 C:\Windows\System32\cmd.exe
 ```
 
-![PowerShell whoami negative test](../../screenshots/day-03/powershell-whoami-negative-test.png)
+![PowerShell whoami negative test](../../screenshots/project-02/day-03/powershell-whoami-negative-test.png)
 
 This helped show why using the parent process as part of the detection is useful. The same executable can appear in different process relationships depending on how it was launched.
 
@@ -101,11 +101,11 @@ The event showed:
 - Parent process: `C:\Windows\System32\cmd.exe`
 - Event ID: `4688`
 
-![Ipconfig process telemetry](../../screenshots/day-03/ipconfig-4688-process-telemetry.png)
+![Ipconfig process telemetry](../../screenshots/project-02/day-03/ipconfig-4688-process-telemetry.png)
 
 Rule `100201` successfully matched the activity and generated a level 5 alert.
 
-![Rule 100201 alert](../../screenshots/day-03/custom-rule-100201-alert.png)
+![Rule 100201 alert](../../screenshots/project-02/day-03/custom-rule-100201-alert.png)
 
 ---
 
