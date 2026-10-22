@@ -55,22 +55,21 @@ Windows Event Viewer is also used to examine local security logs and compare the
 
 ## Projects
 
-### Project 1 — SOC Lab Setup and Security Monitoring
+### Project 1 — Windows Authentication Monitoring and Brute-Force Detection
 
 **Status: Completed**
 
-Established the virtualised SOC environment and configured centralised security monitoring.
+Focused on monitoring Windows authentication activity, analysing security events and developing custom brute-force detection capabilities using Wazuh SIEM.
 
 Key activities:
 
-- Configured Windows 11, Kali Linux and Ubuntu Server virtual machines.
-- Established an isolated internal network.
-- Installed and configured the Wazuh SIEM infrastructure.
-- Deployed and connected the Windows Wazuh agent.
-- Enabled and investigated Windows security logging.
-- Analysed authentication-related events, including Event IDs 4624, 4625 and 4740.
-- Compared Windows Event Viewer records with Wazuh events.
-- Documented configuration steps and collected evidence.
+- Monitored Windows authentication events using Wazuh SIEM.
+- Analysed successful and failed login attempts (Event IDs 4624 and 4625).
+- Investigated account lockout events (Event ID 4740).
+- Correlated authentication events to identify suspicious login patterns.
+- Compared Wazuh events with Windows Event Viewer logs.
+- Developed custom Wazuh detection rules for brute-force activity.
+- Documented investigation findings and supporting evidence.
 
 ### Project 2 — Threat Detection and Investigation
 
